@@ -1,0 +1,255 @@
+#OuterHeader {
+
+    background-color: darkslategray;
+    padding-bottom: 1%;
+    margin-bottom: 3%;
+
+}
+
+.form {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.header {
+
+    text-align: center;
+
+}
+#header {
+    display: inline-block;
+    width: 99%;
+    margin-left: 1%;
+    margin-top: 1%;
+    background-color: darkslategray;
+}
+p#details {
+
+    width:90%;
+    margin-left: 5%;
+    text-align: left;
+    margin-top: 5%;
+
+}
+div#details {
+
+    width:90%;
+    margin-left: 5%;
+    text-align: center;
+    margin-top: 5%;
+
+}
+
+#content {
+
+    width:80%;
+    margin-left: 10%;
+}
+
+#searchBar {
+    border-radius: 35px;
+    border-color: gray;
+    width: 74%;
+    background-image: url(search.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+
+}
+#images{
+
+    display: inline-block;
+
+}
+
+#toggleTable {
+
+    margin-top: 5%;
+    width: 40%;
+
+}
+
+#tableImages {
+
+    height: 100px;
+    width: 200px;
+
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 50px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: -20%;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+
+
+/************Footer Section ****************/
+
+.footer {
+    background-color: darkslategray;
+    position: inherit;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2em;
+    text-align: center;
+    margin-top: 10%;
+}
+.innerDiv {
+
+
+
+}
+
+.side {
+
+    float: right;
+    display: inline-block;
+
+}
+.OuterDiv {
+
+    display: grid;
+
+}
+
+/*********************** Hover Syles ****************/
+
+/**** Grow ****/
+
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/********Underline from Center ************/
+
+
+.hvr-underline-from-center {
+
+    color: white;
+
+    font-family: Agency FB;
+
+    font-size : 2em;
+
+    text-decoration:none;
+
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    overflow: hidden;
+}
+.hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background: #FFFFFF;
+    height: 4px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+}

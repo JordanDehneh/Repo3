@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Task 3 </title>
+
+        <link rel="stylesheet" type="text/css" href="Task3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- jQuery Google CDN-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            function goToLink(link) {
+                window.location = link;
+            }
+            function fillTable(src) {
+                $("#toggleTable").empty();
+                var x =  src.substring(0, src.lastIndexOf('.'));
+                var desc = x.substring(x.lastIndexOf('/') + 1);
+                document.getElementById("toggleTable").removeAttribute("hidden");
+                var result = "<tr style=\"background-color: yellow;\"><th>Image</th><th>Description</th><th>Source</th></tr><tr><td><img src='"+src+"' style=\"width:100px; height:50px;\"></td><td>" + desc + "</td><td><a href='" + src + "'>Source</a></td></tr>";
+                $("#toggleTable").append(result);
+            }
+            function hideTable() {
+                $("#toggleTable").empty();
+                document.getElementById("toggleTable").setAttribute("hidden", true);
+            }
+
+        </script>
+        <style>
+            * {box-sizing: border-box;}
+            body {font-family: Verdana, sans-serif;}
+            .mySlides {display: none;}
+            img {vertical-align: middle;}
+
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active {
+                background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+               -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}
+            }
+
+            @keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+                .text {font-size: 11px}
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="header" class="innerDiv">
+            <img src="../HTML/Zain_Logo.png" width="150px" height="70px" onclick="goToLink('https://www.zain.com/en/')">
+            <div class="side" style="margin-right: 12%;">
+                <input type="text" id="searchBar" placeholder="Search">
+                <a href="Login.php"> Login </a>
+            </div>
+
+        </div>
+
+        <div id="content">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <img src="../Task3/mountains.jpg" style="width:100%; height:300px;">
+                    <div class="text">Mountains</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="../Task3/forests.jpg" style="width:100%; height:300px;">
+                    <div class="text">Forest</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="../Task3/deserts.jpg" style="width:100%; height:300px;">
+                    <div class="text">Desert</div>
+                </div>
+
+            </div>
+
+            <div style="text-align:center; margin-top: -2%;">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <script>
+                var slideIndex = 0;
+                showSlides();
+
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) {slideIndex = 1}
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex-1].style.display = "block";
+                    dots[slideIndex-1].className += " active";
+                    setTimeout(showSlides, 2000); // Change image every 2 seconds
+                }
+            </script>
+
+            <p id="details">
+                Nature, in the broadest sense, is the natural, physical, or material world or universe.
+                "Nature" can refer to the phenomena of the physical world, and also to life in general.
+                The study of nature is a large, if not the only, part of science.
+                Although humans are part of nature, human activity is often understood as a separate category from other natural phenomena.
+            </p>
+            <div id="details">
+                <div id="images">
+                    <img src="mountains.jpg" style="width:200px; height:100px;" onclick="fillTable(this.src)">
+                    <img src="forests.jpg" style="width:200px; height:100px;" onclick="fillTable(this.src)">
+                    <img src="deserts.jpg" style="width:200px; height:100px;" onclick="fillTable(this.src)">
+                    <input type="button" onclick="hideTable()" value="Hide" style="background-image: url('https://goo.gl/images/bU6Exq') ;">
+                </div>
+                <div id="tableBlock">
+                    <table id="toggleTable" border="1" align="center" hidden>
+
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer class="footer" style="background-color: darkslategray;">
+            <div class="OuterDiv">
+
+                <div class="innerDiv">
+                    <img src="GitHubLogo.png" onclick="goToLink('https://github.com/')" alt="Twitter" width="25" height="25" class="hvr-grow">
+                    <img src="facebookPng.png" alt="Facebook" width="25" height="25" class="hvr-grow" onclick="goToLink('https://www.facebook.com/')">
+                </div>
+                <div class="innerDiv">
+                    <img src="googleplus.png" alt="GooglePlus" width="25" height="25" class="hvr-grow" onclick="goToLink('https://plus.google.com/discover')">
+                    <img src="twitter.png" alt="Twitter" width="25" height="25" class="hvr-grow" onclick="goToLink('https://twitter.com/login')">
+                </div>
+
+            </div>
+        </footer>
+
+</body>
+</html>
